@@ -11,3 +11,11 @@
 
 ## Run App
     $ grunt
+
+
+## Change title
+    /meanjs-cdn/modules/core/client/views/header.client.view.html
+
+
+## Generate new module
+    
