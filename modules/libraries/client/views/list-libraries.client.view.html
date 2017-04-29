@@ -3,8 +3,14 @@
     <h1>Libraries</h1>
   </div>
   <div class="list-group">
+    <form action="" class="form-inline well">
+      <div class="form-group">
+        Search:
+        <input name="name" type="text" ng-model="searchText" class="form-control">
+      </div>
+    </form>
     <table class="table table-sriped">
-      <tr ng-repeat="library in vm.libraries">
+      <tr ng-repeat="library in vm.libraries | filter:searchText">
         <td>
           <a ui-sref="libraries.view({libraryId:library._id})">{{library.name}}</a>
           <span ng-if="library.type=='javascript'" class="label label-success">{{library.type}}</span>
