@@ -3,18 +3,16 @@
     <h1>Libraries</h1>
   </div>
   <div class="list-group">
-    <a ng-repeat="library in vm.libraries"
-       ui-sref="libraries.view({ libraryId: library._id })"
-       class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span ng-bind="library.created | date:'mediumDate'"></span>
-        by
-        <span ng-if="library.user" ng-bind="library.user.displayName"></span>
-        <span ng-if="!library.user">Deleted User</span>
-      </small>
-      <h4 class="list-group-item-heading" ng-bind="library.name"></h4>
-    </a>
+    <table class="table table-sriped">
+      <tr ng-repeat="library in vm.libraries">
+        <td>
+          <a>{{library.name}}</a>
+          <span ng-if="library.type=='javascript'" class="label label-success">{{library.type}}</span>
+          <span ng-if="library.type=='css'" class="label label-danger">{{library.type}}</span>
+        </td>
+        <td>{{library.url}}</td>
+      </tr>
+    </table>
   </div>
   <div class="alert alert-warning text-center" ng-if="vm.libraries.$resolved && !vm.libraries.length">
     No Libraries yet, why don't you <a ui-sref="libraries.create">create one</a>?
