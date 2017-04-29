@@ -16,6 +16,27 @@ var LibrarySchema = new Schema({
     required: 'Please fill Library name',
     trim: true
   },
+  url: {
+    type: String,
+    default: '',
+    required: 'Please fill Library url',
+    trim: true
+  },
+  description: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  version: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  type: {
+    type: String,
+    default: '',
+    trim: true
+  },
   created: {
     type: Date,
     default: Date.now

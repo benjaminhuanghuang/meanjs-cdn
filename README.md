@@ -18,4 +18,4 @@
 
 
 ## Generate new module
-    
+    $ yo meanjs:crud-module libraries

@@ -6,12 +6,27 @@
     <form name="vm.form.libraryForm" class="form-horizontal" ng-submit="vm.save(vm.form.libraryForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label class="control-label" for="name">Name</label>
+          <label class="control-label" for="name">Name *</label>
           <input name="name" type="text" ng-model="vm.library.name" id="name" class="form-control" placeholder="Name" required>
-          <div ng-messages="vm.form.libraryForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Library name is required.</p>
-          </div>
         </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="url">URL *</label>
+          <input name="name" type="text" ng-model="vm.library.url" id="url" class="form-control" placeholder="URL" required>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="description">Description</label>
+          <textarea name="name" ng-model="vm.library.description" id="description" class="form-control" placeholder="Description">
+          </textarea>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="version">Version</label>
+          <input name="name" type="text" ng-model="vm.library.version" id="version" class="form-control" placeholder="Version">
+        </div>
+       <div class="form-group" show-errors>
+          <label class="control-label" for="type">Type</label>
+          <input name="name" type="text" ng-model="vm.library.type" id="version" class="form-control" placeholder="Type (JavaScript or CSS)">
+        </div>
+         
         <div class="form-group">
           <button type="submit" class="btn btn-default">{{vm.library._id ? 'Update' : 'Create'}}</button>
         </div>

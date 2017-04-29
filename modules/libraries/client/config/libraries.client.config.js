@@ -11,11 +11,18 @@
     // Set top bar menu items
     menuService.addMenuItem('topbar', {
       title: 'Libraries',
-      state: 'libraries',
-      type: 'dropdown',
+      state: 'libraries.list',
+      //type: 'dropdown',
       roles: ['*']
     });
 
+    menuService.addMenuItem('topbar', {
+      title: 'Add Library',
+      state: 'libraries.create',
+      //type: 'dropdown',
+      roles: ['user']
+    });
+/*
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'libraries', {
       title: 'List Libraries',
@@ -28,5 +35,6 @@
       state: 'libraries.create',
       roles: ['user']
     });
+*/
   }
 }());
