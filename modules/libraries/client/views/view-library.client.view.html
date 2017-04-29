@@ -1,6 +1,14 @@
 <section>
   <div class="page-header">
-    <h1 ng-bind="vm.library.name"></h1>
+    <h1 ng-bind="vm.library.name"></h1><small>Version: {{vm.library.version}}</small>
+    <hr>
+    <div ng-bind="vm.library.description"></div>
+    <br>
+    <span ng-if="vm.library.type=='javascript'" class="label label-success">{{vm.library.type}}</span>
+    <span ng-if="vm.library.type=='css'" class="label label-danger">{{vm.library.type}}</span>
+    <br>
+    <br>
+    <code>{{vm.library.url}}</code>
   </div>
   <div class="pull-right"
        ng-show="vm.library.isCurrentUserOwner">
