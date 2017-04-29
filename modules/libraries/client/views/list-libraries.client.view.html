@@ -6,7 +6,7 @@
     <table class="table table-sriped">
       <tr ng-repeat="library in vm.libraries">
         <td>
-          <a>{{library.name}}</a>
+          <a ui-sref="libraries.view({libraryId:library._id})">{{library.name}}</a>
           <span ng-if="library.type=='javascript'" class="label label-success">{{library.type}}</span>
           <span ng-if="library.type=='css'" class="label label-danger">{{library.type}}</span>
         </td>
